@@ -24,18 +24,5 @@ namespace Nibbles
 
             Console.ReadKey(true);
         }
-
-        private static Point GenerateFoodPoint(Arena arena, Snake[] snakes)
-        {
-            Point p = new Point() { X = rnd.Next(Arena.WindowWidth), Y = rnd.Next(Arena.WindowHeight) };
-
-            while (arena.HasBlockAt(p) ||
-                   snakes.Any(sn => sn.BodyCollides(p)))
-            {
-                p = new Point() { X = rnd.Next(Arena.WindowWidth), Y = rnd.Next(Arena.WindowHeight) };
-            }
-
-            return p;
-        }
     }
 }
