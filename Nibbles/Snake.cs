@@ -99,7 +99,8 @@ namespace Nibbles
 
         public void IncreaseSize(int change)
         {
-            size += change;
+            if (size + change < MaxBodyLength)
+                size += change;
         }
 
         public bool BodyCollides(Point p)
